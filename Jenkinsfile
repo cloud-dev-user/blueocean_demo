@@ -9,7 +9,7 @@ pipeline {
     stage('stage1') {
       steps {
         sh '''echo "my first pipeline stage" 
-echo " my DB username is $DB_username"'''
+echo " my DB username is $DB_username & my tagname is $tag_name"'''
       }
     }
 
@@ -22,5 +22,8 @@ echo " my DB username is $DB_username"'''
   }
   environment {
     DB_username = 'dbadmin'
+  }
+  parameters {
+    string(name: 'tag_name', defaultValue: '', description: ' this is tag given to docker image')
   }
 }
