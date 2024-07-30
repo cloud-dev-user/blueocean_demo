@@ -21,8 +21,14 @@ echo " my DB username is $DB_username & my tagname is $tag_name"'''
         echo 'Pipeline is completed'
       }
     }
-
+    stage('stage3') {
+      steps{
+             withCredentials(bindings: [string(credentialsId: 'my-creds', variable: 'TOKEN')]) {
+            sh "echo $TOKEN"
+               }
+       }
   }
+    
   environment {
     DB_username = 'dbadmin'
   }
