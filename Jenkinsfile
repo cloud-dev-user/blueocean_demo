@@ -14,6 +14,9 @@ echo " my DB username is $DB_username & my tagname is $tag_name"'''
     }
 
     stage('stage2') {
+      when {
+           branch 'master'
+            }
       steps {
         echo 'Pipeline is completed'
       }
