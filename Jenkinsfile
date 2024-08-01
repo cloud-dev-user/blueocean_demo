@@ -6,6 +6,7 @@ pipeline {
 
   }
   stages {
+    stage(" running stage1 and stage2 in parallel") {
     parallel {
       stage('stage1') {
       steps {
@@ -17,6 +18,7 @@ echo " my DB username is $DB_username & my tagname is $tag_name"'''
       steps {
         echo 'This is parallel stage running along with stage1'
       }
+    }
     }
     }
     
