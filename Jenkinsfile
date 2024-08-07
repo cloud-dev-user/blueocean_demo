@@ -35,7 +35,7 @@ pipeline {
                   }
                   stage ( " Run the docker container " ){
                        steps {
-                                sh " sudo docker run -d -p $container_port:$default_container_port --name $default_container_name $docker_registry:$docker_tag"
+                                sh " sudo docker run -d -p $container_port:$default_container_port --name $default_container_name-$docker_tag $docker_registry:$docker_tag"
                        }
                   }
           }}
