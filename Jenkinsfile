@@ -9,7 +9,7 @@ pipeline {
                      }
                   stage("Sonar scanning for SCA") {
                        steps { 
-                            sh " this is sonar scanning " 
+                            echo "this is sonar scanning" 
                        }
                      }
                   stage (" Creating Docker Image " )  {
