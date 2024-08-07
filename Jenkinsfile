@@ -17,12 +17,12 @@ pipeline {
                      }
                   stage (" Creating Docker Image " )  {
                            steps{
-                                    sh " cp target/my-app.war . && sudo docker build -t vishnu11/raviimage:1.0.0 ." 
+                                    sh " cp target/my-app.war . && sudo docker build -t vishnu11/raviimage:$docker_tag ." 
                            }
                   }
                   stage (" store the image to dockerhub") {
                            steps { 
-                                    sh " sudo docker push vishnu11/raviimage:1.0.0"
+                                    sh " sudo docker push vishnu11/raviimage:$docker_tag"
                            }
                   }
          }}
