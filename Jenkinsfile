@@ -1,6 +1,9 @@
 @Library("shared-lib") _
 pipeline { 
          agent { label "agent01" } 
+         parameters {
+  string defaultValue: '1.0.0', description: 'This is docker tag to be assigned to newly generated docker image ', name: 'docker_tag'
+}
          stages { 
                      stage("build my package") {
                        steps { 
