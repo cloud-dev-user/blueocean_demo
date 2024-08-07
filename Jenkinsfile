@@ -25,5 +25,8 @@ pipeline {
                                     sh " sudo docker push vishnu11/raviimage:$docker_tag"
                            }
                   }
-         }}
+                  stage ( " Run the docker container " ){
+                       steps {
+                                sh " sudo docker run -d -p 8081:8081 --name webapp1 vishnu11/raviimage:$docker_tag"
+          }}
                        
