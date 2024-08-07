@@ -5,7 +5,7 @@ pipeline {
   string defaultValue: '1.0.0', description: 'This is docker tag to be assigned to newly generated docker image ', name: 'docker_tag'
   string defaultValue: '8081', description: 'This is docker container port to be assigned to newly generated docker image ', name: 'container_port'
 }                
-}
+
          environment {
   docker_registry = "vishnu11/raviimage"
   default_container_port = "8080"
