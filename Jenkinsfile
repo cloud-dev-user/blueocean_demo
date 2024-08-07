@@ -14,7 +14,7 @@ pipeline {
                      }
                   stage (" Creating Docker Image " )  {
                            steps{
-                                    sh " sudo docker build -t vishnu11/raviimage:1.0.0 ." 
+                                    sh " cp target/my-app.war . && sudo docker build -t vishnu11/raviimage:1.0.0 ." 
                            }
                   }
                   stage (" store the image to dockerhub") {
